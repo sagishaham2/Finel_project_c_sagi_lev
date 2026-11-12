@@ -1,83 +1,27 @@
-Connected Components Analyzer in C
+# 🧩 Connected Components Analyzer (C Project)
 
-This project is a C-based application that analyzes a 2D grid of characters to find, group, and sort connected components (shapes) made of specific target characters. It utilizes advanced data structures and memory optimization techniques to perform its tasks efficiently.
+A robust C program designed to identify, analyze, and sort connected components within a 2D grid. Built with a strong emphasis on dynamic memory management and efficient bitwise operations.
 
-🚀 Features
+## ✨ Features
+- **Memory Efficiency:** Uses bitwise operations to store the grid, minimizing memory footprint (1 bit per cell).
+- **Advanced Data Structures:** Implements Linked Lists to group connected cells (components) and a Binary Search Tree (BST) to sort these components by size and coordinates.
+- **Robust Error Handling:** Strict memory allocation checks and input validation to prevent memory leaks and crashes.
 
-Bitwise Matrix Representation: To optimize memory usage, the 2D grid is stored using bitwise operations, meaning each cell occupies exactly 1 bit in memory rather than a full byte.
+## 🛠️ Tech Stack
+- **Language:** C
+- **Core Concepts:** Pointers, Dynamic Memory Allocation (`malloc`, `calloc`, `free`), Bitwise Operations, Linked Lists, Binary Search Trees (BST).
 
-Connected Component Labeling: Scans the grid and groups adjacent # characters using dynamically allocated Linked Lists. It efficiently merges lists when disconnected parts of a shape meet.
-
-Binary Search Tree (BST) Sorting: All identified shapes are inserted into a Binary Search Tree. They are sorted primarily by their size (area). If two shapes have the same size, they are sorted by their top-left-most coordinate.
-
-Memory Safe: Strict dynamic memory allocation checks and comprehensive memory deallocation (no memory leaks).
-
-📁 Project Structure
-
-maic.c: The main entry point of the program. Handles command-line arguments and orchestrates the program flow.
-
-func.c: Contains the core implementation of all algorithms, data structures (Matrix, Linked Lists, BST), and memory management functions.
-
-func.h: The header file containing structure definitions and function prototypes.
-
-🛠️ Compilation and Execution
-
-Compilation
-
-Use gcc to compile the source files into an executable. Run the following command in your terminal:
-
-gcc -Wall -ansi -pedantic maic.c func.c -o components_analyzer
-
-
-Execution
-
-The program requires the dimensions of the grid (Columns and Rows) to be passed as command-line arguments.
-
-./components_analyzer <columns_N> <rows_M>
-
-
-Note: The arguments must be natural numbers.
-
-Input Format
-
-After running the executable, input the matrix characters row by row.
-
-# represents a filled cell (part of a shape).
-
-. represents an empty cell.
-
-White spaces and newlines are ignored.
-
-After the matrix is fully entered, provide a single integer k (between 1 and the total number of unique shapes found).
-
-Output
-
-The program will output the characteristics of the k-th smallest shape in the format:
-
-<size> <y_coordinate> <x_coordinate>
-
-
-📝 Example
-
-Running the program:
-
-./components_analyzer 5 4
-
-
-Input:
-
-. # . . #
-. # # . #
-. . . . .
-# # . . .
-2
-
-
-(Explanation: We look for the 2nd smallest shape out of the 3 shapes present in the grid).
-
-Output:
-
-2 4 1
-
-
-(Explanation: The 2nd smallest shape has a size of 2, starting at Y=4, X=1).
+## 🚀 How to Run
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/sagishaham2/Finel_project_c_sagi_lev.git](https://github.com/sagishaham2/Finel_project_c_sagi_lev.git)
+   cd Finel_project_c_sagi_lev
+   ```
+2. Compile the project (using `gcc`):
+   ```bash
+   gcc -ansi -Wall -pedantic main.c func.c -o connected_components
+   ```
+3. Run the executable with grid dimensions (e.g., columns=10, rows=10):
+   ```bash
+   ./connected_components 10 10
+   ```
